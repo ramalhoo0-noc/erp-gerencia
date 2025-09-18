@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOC SOLUTIONS</title>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person_add" />
   <link rel="stylesheet" href="/style/style.css">
   <link rel="stylesheet" href="/style/vendas.css">
   <link rel="stylesheet" href="/style/tabelaInfo.css">
   <script src="/script/src/vendas.js" defer></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person_add" />
+
 
 
 </head>
@@ -85,7 +86,221 @@
     </main>
   </div>
 
+  <!-- ---------- MODAL NOVA VENDA ---------- -->
+  <div class="formulario-overlay" id="modalVenda">
+    <section class="formulario">
+      <button class="close-modal" id="fecharModal">&times;</button>
 
+      <h2 class="form-title">Cadastro de Venda</h2>
+
+      <!-- ID da Venda -->
+      <div class="form-group">
+        <label for="idVenda">ID da venda <span>*</span></label>
+        <div class="input-wrapper" id="idVenda-wrapper">
+          <input title="ID da venda" type="text" class="inputID" id="idVenda" placeholder="ID">
+        </div>
+      </div>
+
+      <!-- Cliente -->
+      <div class="form-group">
+        <label for="cliente">Cliente <span>*</span></label>
+        <div class="input-wrapper">
+          <input type="text" class="inputID" placeholder="ID" title="ID do cliente">
+          <input type="text" class="inputFormulario" placeholder="Nome do cliente" title="Nome do cliente">
+          <button title="Novo Cliente" class="iconeVenda" id="btnNovoCliente">
+            <img src="/Banco Imagem/icon/addPessoa.svg" alt="Adicionar novo cliente">
+          </button>
+        </div>
+      </div>
+
+      <!-- Produto -->
+      <div class="form-group">
+        <label for="produto">Produto <span>*</span></label>
+        <div class="input-wrapper">
+          <input title="ID do produto" type="text" class="inputID" placeholder="ID">
+          <input title="Nome do produto" type="text" class="inputFormulario" placeholder="Produto vendido">
+          <button title="Adicionar produto no estoque" class="iconeVenda">
+            <img src="/Banco Imagem/icon/carrinhoEstoque.svg" alt="Adicionar no estoque">
+          </button>
+        </div>
+      </div>
+
+      <!-- Valor e Pagamento -->
+      <div class="form-group-horizontal">
+        <!-- Valor -->
+        <div class="form-group flex-1">
+          <label for="valorProduto">Valor <span>*</span></label>
+          <div class="input-wrapper">
+            <input title="Valor do produto" type="text" class="inputFormulario" placeholder="R$ 0,00" id="valorProduto">
+          </div>
+        </div>
+
+        <!-- Método de Pagamento -->
+        <div class="form-group flex-1">
+          <label for="metodoPagamento">Método de Pagamento <span>*</span></label>
+          <div class="input-wrapper">
+            <select class="inputFormulario" id="metodoPagamento">
+              <option value="">Selecione</option>
+              <option value="pix">PIX</option>
+              <option value="cartao">Cartão</option>
+              <option value="boleto">Boleto</option>
+              <option value="dinheiro">Dinheiro</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campos Cartão (condicional) -->
+      <div class="form-group-horizontal">
+        <div class="form-group flex-1 campo-cartao" id="cartaoTipo">
+          <label for="tipoCartao">Tipo do Pagamento <span>*</span></label>
+          <div class="input-wrapper">
+            <select class="inputFormulario" id="tipoCartao">
+              <option value="">Selecione</option>
+              <option value="vista">À vista</option>
+              <option value="parcelado">Parcelado</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group flex-1 campo-cartao" id="cartaoParcelamento">
+          <label for="parcelamentoCartao">Parcelamento <span>*</span></label>
+          <div class="input-wrapper">
+            <select class="inputFormulario" id="parcelamentoCartao">
+              <option value="">Selecione</option>
+              <option value="1">1X Sem Juros</option>
+              <option value="2">2X Sem Juros</option>
+              <option value="3">3X Sem Juros</option>
+              <option value="4">4X Sem Juros</option>
+              <option value="5">5X Sem Juros</option>
+              <option value="6">6X Sem Juros</option>
+              <option value="7">7X Juros 5% a.m</option>
+              <option value="8">8X Juros 5% a.m</option>
+              <option value="9">9X Juros 5% a.m</option>
+              <option value="10">10X Juros 5% a.m</option>
+              <option value="11">11X Juros 5% a.m</option>
+              <option value="12">12X Juros 5% a.m</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btnSalvar">Salvar Venda</button>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ---------- MODAL NOVO CLIENTE ---------- -->
+  <div class="formulario-overlay" id="modalNovoCliente">
+    <section class="formulario">
+      <button class="close-modal" id="fecharModal">&times;</button>
+
+      <h2 class="form-title">Cadastro de Cliente</h2>
+
+      <!-- Nome completo -->
+      <div class="form-group">
+        <label for="nomeCliente">Nome completo do cliente<span>*</span></label>
+        <div class="input-wrapper">
+          <input type="text" class="inputFormulario" placeholder="Nome completo do cliente" title="Nome completo do cliente" id="inputnomeCompleto">
+        </div>
+      </div>
+
+      <!-- Dados pessoais -->
+      <!-- CPF -->
+      <div class="form-group-horizontal">
+        <div class="form-group flex-1">
+          <label for="cpfCliente">CPF / CPNJ <span>*</span></label>
+          <div class="input-wrapper">
+            <input title="CPF do cliente" type="text" class="inputFormulario" placeholder="CPF" id="inputCPF">
+          </div>
+        </div>
+
+        <!-- RG -->
+        <div class="form-group flex-1">
+          <label for="rgCliente">IE /RG</label>
+          <div class="input-wrapper">
+            <input title="RG do cliente" type="text" class="inputFormulario" placeholder="IE /RG" id="inputRG">
+          </div>
+        </div>
+      </div>
+
+      <!-- ENDEREÇO -->
+      <p class="form-title-informacao">Endereço de Cliente</p>
+      <div class="form-group-horizontal">
+        <div class="form-group flex-1">
+          <label for="valorProduto">Endereço<span>*</span></label>
+          <div class="input-wrapper">
+            <input title="Endereço do cliente" type="text" class="inputFormulario" placeholder="Endereço do cliente" id="valorProduto">
+          </div>
+        </div>
+
+        <!-- Numero da residencia -->
+        <div class="form-group flex-1">
+          <label for="numeroResidencia">Numero</label>
+          <div class="input-wrapper">
+            <input title="Numero da Residencia do cliente" type="text" class="inputFormulario" placeholder="Numero da Residencia" id="numeroResidencia">
+          </div>
+        </div>
+      </div>
+
+      <!-- Bairro -->
+      <div class="form-group-horizontal">
+        <div class="form-group flex-1">
+          <label for="inputBairro">Bairro<span>*</span></label>
+          <div class="input-wrapper">
+            <input title="Bairro do cliente" type="text" class="inputFormulario" placeholder="Bairro do cliente" id="inputBairro">
+          </div>
+        </div>
+
+        <!-- CEP da residencia -->
+        <div class="form-group flex-1">
+          <label for="inputCEP">CEP</label>
+          <div class="input-wrapper">
+            <input title="CEP do cliente" type="text" class="inputFormulario" placeholder="CEP do cliente" id="inputCEP">
+          </div>
+        </div>
+      </div>
+
+      <!-- Cidade -->
+      <div class="form-group">
+        <label for="inputCidade">Cidade<span>*</span></label>
+        <div class="input-wrapper">
+          <input type="text" class="inputFormulario" placeholder="Cidade do cliente" title="Cidade do cliente">
+        </div>
+      </div>
+
+      <!-- contato do cliente -->
+      <p class="form-title-informacao">Contato</p>
+
+      <div class="form-group-horizontal">
+        <div class="form-group flex-1">
+          <label for="inputWhatsapp">Whatsapp<span>*</span></label>
+          <div class="input-wrapper">
+            <input title="Whatsapp do cliente" type="text" class="inputFormulario" placeholder="Whatsapp do cliente" id="inputWhatsapp">
+          </div>
+        </div>
+
+        <!-- Numero da residencia -->
+        <div class="form-group flex-1">
+          <label for="inputTelefone">Telefone</label>
+          <div class="input-wrapper">
+            <input title="Telefone do cliente" type="text" class="inputFormulario" placeholder="Telefone do cliente" id="inputTelefone">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail">E-mail <span>*</span></label>
+        <div class="input-wrapper">
+          <input type="text" class="inputFormulario" placeholder="Email do cliente" title="E-mail do cliente" id="inputEmail">
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btnSalvar">Cadastrar Cliente</button>
+      </div>
+  </div>
 </body>
 
 </html>
