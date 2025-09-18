@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <!-- ---------- MODAL NOVA VENDA ---------- -->
+  <div class="formulario-overlay" id="modalVenda">
+    <section class="formulario">
+      <button class="close-modal" id="fecharModal">&times;</button>
+
+      <h2 class="form-title">Cadastro de Venda</h2>
+
+      <!-- ID da Venda -->
+      <div class="form-group">
+        <label for="idVenda">ID da venda <span>*</span></label>
+        <div class="input-wrapper" id="idVenda-wrapper">
+          <input title="ID da venda" type="text" class="inputID" id="idVenda" placeholder="ID">
+        </div>
+      </div>
+
+      <!-- Cliente -->
+      <div class="form-group">
+        <label for="cliente">Cliente <span>*</span></label>
+        <div class="input-wrapper">
+          <input type="text" class="inputID" placeholder="ID" title="ID do cliente">
+          <input type="text" class="inputFormulario" placeholder="Nome do cliente" title="Nome do cliente">
+          <button title="Novo Cliente" class="iconeVenda">
+            <img src="/Banco Imagem/icon/addPessoa.svg" alt="Adicionar novo cliente">
+          </button>
+        </div>
+      </div>
+
+      <!-- Produto -->
+      <div class="form-group">
+        <label for="produto">Produto <span>*</span></label>
+        <div class="input-wrapper">
+          <input title="ID do produto" type="text" class="inputID" placeholder="ID">
+          <input title="Nome do produto" type="text" class="inputFormulario" placeholder="Produto vendido">
+          <button title="Adicionar produto no estoque" class="iconeVenda">
+            <img src="/Banco Imagem/icon/carrinhoEstoque.svg" alt="Adicionar no estoque">
+          </button>
+        </div>
+      </div>
+
+      <!-- Valor e Pagamento -->
+      <div class="form-group-horizontal">
+        <!-- Valor -->
+        <div class="form-group flex-1">
+          <label for="valorProduto">Valor <span>*</span></label>
+          <div class="input-wrapper">
+            <input title="Valor do produto" type="text" class="inputFormulario" placeholder="R$ 0,00" id="valorProduto">
+          </div>
+        </div>
+
+        <!-- Método de Pagamento -->
+        <div class="form-group flex-1">
+          <label for="metodoPagamento">Método de Pagamento <span>*</span></label>
+          <div class="input-wrapper">
+            <select class="inputFormulario" id="metodoPagamento">
+              <option value="">Selecione</option>
+              <option value="pix">PIX</option>
+              <option value="cartao">Cartão</option>
+              <option value="boleto">Boleto</option>
+              <option value="dinheiro">Dinheiro</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campos Cartão (condicional) -->
+      <div class="form-group-horizontal">
+        <div class="form-group flex-1 campo-cartao" id="cartaoTipo">
+          <label for="tipoCartao">Tipo do Pagamento <span>*</span></label>
+          <div class="input-wrapper">
+            <select class="inputFormulario" id="tipoCartao">
+              <option value="">Selecione</option>
+              <option value="vista">À vista</option>
+              <option value="parcelado">Parcelado</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group flex-1 campo-cartao" id="cartaoParcelamento">
+          <label for="parcelamentoCartao">Parcelamento <span>*</span></label>
+          <div class="input-wrapper">
+            <select class="inputFormulario" id="parcelamentoCartao">
+              <option value="">Selecione</option>
+              <option value="1">1X Sem Juros</option>
+              <option value="2">2X Sem Juros</option>
+              <option value="3">3X Sem Juros</option>
+              <option value="4">4X Sem Juros</option>
+              <option value="5">5X Sem Juros</option>
+              <option value="6">6X Sem Juros</option>
+              <option value="7">7X Juros 5% a.m</option>
+              <option value="8">8X Juros 5% a.m</option>
+              <option value="9">9X Juros 5% a.m</option>
+              <option value="10">10X Juros 5% a.m</option>
+              <option value="11">11X Juros 5% a.m</option>
+              <option value="12">12X Juros 5% a.m</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btnSalvar">Salvar Venda</button>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

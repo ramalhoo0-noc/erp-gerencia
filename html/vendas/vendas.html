@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOC SOLUTIONS</title>
+
+  <link rel="stylesheet" href="/style/style.css">
+  <link rel="stylesheet" href="/style/vendas.css">
+  <link rel="stylesheet" href="/style/tabelaInfo.css">
+  <script src="/script/src/vendas.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person_add" />
+
+
+</head>
+
+<body>
+  <header>
+    <section class="header-container">
+      <div class="header-left">
+        <img src="/Banco Imagem/celular.png" alt="Ícone da Loja" class="icone-loja">
+      </div>
+      <div class="header-right">
+        <input type="text" placeholder="Pesquisar no sistema" class="barra-pesquisa" id="barraPesquisa">
+        <img src="/Banco Imagem/notificacao.png" alt="Sino de Notificação" class="icone-sino">
+        <a href="#" class="link-contato">Contato</a>
+        <a href="#" class="link-perfil">Perfil</a>
+      </div>
+    </section>
+  </header>
+
+  <!-- ---------- CONTEÚDO PRINCIPAL ---------- -->
+  <div class="main-container">
+    <aside class="sidebar">
+      <a href="/html/home.html" class="btnSideBar">Home</a>
+      <a href="vendas.html" class="btnSideBar">Vendas</a>
+      <a href="compras.html" class="btnSideBar">Compras</a>
+      <a href="clientes.html" class="btnSideBar">Clientes</a>
+      <a href="financeiro.html" class="btnSideBar">Financeiro</a>
+      <a href="estoque.html" class="btnSideBar">Estoque</a>
+      <a href="fiscal.html" class="btnSideBar">Fiscal</a>
+    </aside>
+
+    <main class="content">
+      <section id="headerContent">
+        <div class="consulta">
+          <input type="text" placeholder="Consultar por cliente" class="consultaFiltro">
+        </div>
+        <div id="buttonsVenda">
+          <button class="btnHeader" id="novaVenda">Nova venda</button>
+          <button class="btnHeader" id="editarVenda">Editar venda</button>
+          <button class="btnHeader" id="deletarVenda">Deletar venda</button>
+        </div>
+      </section>
+
+      <section class="listaItens">
+        <table class="data-grid">
+          <thead>
+            <tr>
+              <th></th>
+              <th>ID</th>
+              <th>Razão Social</th>
+              <th>CPF</th>
+              <th>Endereço</th>
+              <th>Número</th>
+              <th>Data venda</th>
+              <th>Produto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" name="selecionar"></td>
+              <td>255</td>
+              <td>Eric Ramalho Felix Aro</td>
+              <td>45279093807</td>
+              <td>Avenida Coronel Germano</td>
+              <td>373</td>
+              <td>20/06/2000</td>
+              <td>Cesta de Chocolates</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+
+</body>
+
+</html>

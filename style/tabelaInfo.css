@@ -1,0 +1,30 @@
+.listaItens {
+  margin-top: 20px;
+}
+.data-grid {
+  width: 100%;
+  border-collapse: separate;
+  font-family: Arial, sans-serif;
+  color: #000000;
+  background-color: #f5f5f5; /* Cor de fundo escura, semelhante à imagem */
+}
+
+.data-grid th,
+.data-grid td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #4a657c; /* Linha divisória entre as linhas */
+}
+
+/* Estilos para o cabeçalho da tabela */
+.data-grid thead tr {
+  background-color: #e4e4e4; /* Fundo do cabeçalho um pouco mais claro */
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.data-grid tbody tr:hover {
+  background-color: #bebebe;
+  cursor: pointer;
+}
