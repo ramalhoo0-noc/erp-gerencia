@@ -168,7 +168,7 @@
 /* ---------- BOTÃO DENTRO DO INPUT ---------- */
 .iconeVenda {
   background: transparent;
-  border: none;
+  border: 1px solid #ddd;
   padding: 8px 10px;
   cursor: pointer;
   transition: background 0.3s ease;

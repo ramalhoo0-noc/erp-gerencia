@@ -20,11 +20,11 @@
   <header>
     <section class="header-container">
       <div class="header-left">
-        <img src="/Banco Imagem/celular.png" alt="Ícone da Loja" class="icone-loja">
+        <img src="/Banco Imagem/icon/cabecalho/notificacao.png" alt="Ícone da Loja" class="icone-loja">
       </div>
       <div class="header-right">
         <input type="text" placeholder="Pesquisar no sistema" class="barra-pesquisa" id="barraPesquisa">
-        <img src="/Banco Imagem/notificacao.png" alt="Sino de Notificação" class="icone-sino">
+        <img src="/Banco Imagem/icon/cabecalho/notificacao.svg" alt="Sino de Notificação" class="icone-sino">
         <a href="#" class="link-contato">Contato</a>
         <a href="#" class="link-perfil">Perfil</a>
       </div>
@@ -62,6 +62,11 @@
             </a>
           </li>
           <li>
+            <a href="fornecedor.html" class="btnSideBar">
+              Fornecedor <img class="btnAsideBar" src="/Banco Imagem/icon/asideBar/caminhao.svg" alt="Ícone fornecedor">
+            </a>
+          </li>
+          <li>
             <a href="fiscal.html" class="btnSideBar">
               Fiscal <img class="btnAsideBar" src="/Banco Imagem/icon/asideBar/fiscal.svg" alt="Ícone Fiscal">
             </a>
@@ -73,7 +78,7 @@
     <main class="content">
       <section id="headerContent">
         <div class="consulta">
-          <input type="text" placeholder="Consultar por cliente" class="consultaFiltro">
+          <input type="text" placeholder="Consultar venda" class="consultaFiltro">
         </div>
         <div id="buttonsVenda">
           <button class="btnHeader" id="novaVenda">Nova venda</button>
@@ -88,24 +93,24 @@
             <tr>
               <th></th>
               <th>ID</th>
-              <th>Razão Social</th>
-              <th>CPF</th>
-              <th>Endereço</th>
-              <th>Número</th>
-              <th>Data venda</th>
               <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Valor</th>
+              <th>Razão Social</th>
+              <th>Endereço</th>
+              <th>Data venda</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><input type="checkbox" name="selecionar"></td>
               <td>255</td>
+              <td>Picole</td>
+              <td>20</td>
+              <td>15</td>
               <td>Eric Ramalho Felix Aro</td>
               <td>45279093807</td>
-              <td>Avenida Coronel Germano</td>
-              <td>373</td>
-              <td>20/06/2000</td>
-              <td>Cesta de Chocolates</td>
+              <td>Picole</td>
             </tr>
           </tbody>
         </table>
@@ -328,6 +333,92 @@
         <button class="btnSalvar">Cadastrar Cliente</button>
       </div>
   </div>
+
+
+  <!-- ---------- MODAL NOVO ESTOQUE ---------- -->
+  <div class="modalNovoProdutoEstoque">
+    <section class="formulario">
+      <button class="close-modal" id="fecharModal">&times;</button>
+
+      <h2 class="form-title">Cadastro de Produto</h2>
+
+      <!-- Nome produto -->
+      <div class="form-group">
+        <label for="inputProduto">Nome do produto<span>*</span></label>
+        <div class="input-wrapper">
+          <input type="text" class="inputFormulario" placeholder="Nome do produto" title="Nome do produto" id="inputProduto">
+        </div>
+      </div>
+
+      <!-- Quantidade de produto -->
+      <div class="form-group-horizontal">
+        <div class="form-group flex-1">
+          <label for="inputQuantidade">Quantidade <span>*</span></label>
+          <div class="input-wrapper">
+            <input title="Quantidade" type="text" class="inputFormulario" placeholder="Quantidade" id="inputQuantidade">
+          </div>
+        </div>
+
+        <!-- Valor do produto -->
+        <div class="form-group flex-1">
+          <label for="inputProduto">Valor do produto</label>
+
+          <div class="form-group">
+            <div class="input-wrapper">
+              <input disabled type="text" class="inputID" placeholder="R$" title="" id="inputFornecedorID">
+
+              <input type="text" class="inputFormulario" placeholder="Nome do Fornecedor" title="Nome do Fornecedor">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fornecedor -->
+      <p class="form-title-informacao">Fornecedor </p>
+      <div class="form-group">
+        <label for="inputFornecedor">Fornecedor <span>*</span></label>
+        <div class="input-wrapper">
+          <input type="text" class="inputID" placeholder="ID" title="ID do Fornecedor" id="inputFornecedorID">
+
+          <input type="text" class="inputFormulario" placeholder="Nome do Fornecedor" title="Nome do Fornecedor">
+          <button title="Novo Fornecedor" class="iconeVenda" id="btnNovoFornecedor">
+            <img src="/Banco Imagem/icon/novoProduto/caminhao.svg" alt="Adicionar novo cliente">
+          </button>
+        </div>
+      </div>
+
+      <!-- contato do cliente -->
+      <p class="form-title-informacao">Contato Fornecedor</p>
+
+      <div class="form-group-horizontal">
+        <div class="form-group flex-1">
+          <label for="inputWhatsapp">Whatsapp<span>*</span></label>
+          <div class="input-wrapper">
+            <input title="Whatsapp do cliente" type="text" class="inputFormulario" placeholder="Whatsapp do cliente" id="inputWhatsappFornecedor">
+          </div>
+        </div>
+
+        <!-- Numero da residencia -->
+        <div class="form-group flex-1">
+          <label for="inputTelefoneFornecedor">Telefone</label>
+          <div class="input-wrapper">
+            <input title="Telefone do cliente" type="text" class="inputFormulario" placeholder="Telefone do cliente" id="inputTelefoneFornecedor">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmailFornecedor">E-mail <span>*</span></label>
+        <div class="input-wrapper">
+          <input type="text" class="inputFormulario" placeholder="Email do cliente" title="E-mail do cliente" id="inputEmailFornecedor" name="ola">
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btnSalvar">Cadastrar Produto</button>
+      </div>
+  </div>
+
+
 </body>
 
 </html>

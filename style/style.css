@@ -38,7 +38,7 @@
 }
 
 .icone-sino {
-  height: 15px;
+  height: 25px;
 }
 .icone-loja {
   height: 30px;
@@ -70,8 +70,9 @@ body {
 }
 
 .main-container {
+  margin-top: 30px;
   display: flex;
-  height: 100vh;
+  height: 80vh;
 }
 
 .content {
@@ -162,3 +163,11 @@ body {
   transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
   background-color: rgba(255, 255, 255, 0.575);
 }
+
+/* MODAL NOVO ITEM ESTOQUE */
+
+.modalNovoProdutoEstoque {
+  display: none;
+}
+
+/* MODAL NOVO ITEM ESTOQUE */
