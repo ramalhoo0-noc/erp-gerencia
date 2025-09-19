@@ -10,6 +10,12 @@
   --backgroundInput: rgb(240, 240, 240);
   --backgroundInputFocus: rgb(240, 240, 240);
   --borderFocusInput: solid 0.5px #bebebe;
+  --sidebar-width: 250px;
+  --sidebar-bg: #1e1e2f;
+  --sidebar-hover: #2d2d44;
+  --text-color: #fff;
+  --accent-color: #5855ff;
+  --transition-speed: 0.3s;
 }
 
 .header-container {
@@ -68,40 +74,12 @@ body {
   height: 100vh;
 }
 
-.sidebar {
-  width: 250px;
-  background-color: #f7f7f7c5;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 3px 3px px #91909080;
-}
-
 .content {
   flex-grow: 1;
-  padding: 20px;
+  padding: 10px;
   overflow-y: auto;
 }
 
-.btnSideBar {
-  color: black;
-  background-color: #f7f7f7c5;
-  text-decoration: none;
-  padding: 12px;
-  text-align: center;
-  margin-top: 15px;
-}
-
-.btnSideBar:hover {
-  cursor: pointer;
-  background-color: white;
-  border-radius: 10px;
-}
-.btnSideBar:focus {
-  cursor: pointer;
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-}
 .grid {
   display: grid;
   gap: 15px;
@@ -133,4 +111,54 @@ body {
   box-shadow: 3px 3px 5px #88888880;
   width: 18rem;
   height: 2rem;
+}
+
+.consultaFiltro:focus {
+  border: 0.8px solid;
+  border-color: #4a90e2;
+  outline: none;
+}
+.sideBar {
+  display: flex;
+  justify-content: center;
+  width: 250px;
+}
+
+.navSideBar > ul {
+  width: 250px;
+  margin-top: 20px;
+}
+
+.navSideBar > ul > li {
+  font-size: 1.2rem;
+  padding: 5px;
+  margin-top: 15px;
+  list-style-type: none;
+  margin-left: 10px;
+  width: 80%;
+}
+
+.navSideBar > ul > li > a {
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: space-between; /* Centraliza horizontalmente */
+  gap: 2px; /* Espaço entre o texto e o ícone */
+  text-decoration: none;
+  color: #3a3a3a; /* ou a cor que preferir */
+  padding: 10px;
+}
+
+.navSideBar > ul > li > a > img {
+  width: 18px;
+  height: 20px;
+  object-fit: contain; /* Mantém proporção */
+  display: block;
+}
+.btnSideBar {
+  border: 1px solid transparent;
+}
+.btnSideBar:hover {
+  border-bottom: 1px solid #3d9bff;
+  transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  background-color: rgba(255, 255, 255, 0.575);
 }
